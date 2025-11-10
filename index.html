@@ -1,30 +1,81 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ✅ Basic Metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diopet Masca - Full Stack Developer</title>
 
-    <meta name="description" content="Modern portfolio showcasing web development projects, skills, and full-stack development experience." />
+    <title>Diopet Masca | Full Stack Developer Portfolio</title>
+
+    <meta
+      name="description"
+      content="Welcome to Diopet Masca’s portfolio — a showcase of modern full-stack web development projects, technical skills, and creative problem-solving."
+    />
     <meta name="author" content="Diopet Masca" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Diopet Masca - Portfolio" />
-    <meta property="og:description" content="Showcasing full-stack development work and project experience." />
+    <!-- ✅ Canonical Link (SEO Best Practice) -->
+    <link rel="canonical" href="https://diopetmasca.netlify.app/" />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+
+    <!-- ✅ Open Graph / Social Sharing -->
+    <meta property="og:title" content="Diopet Masca - Full Stack Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore Diopet Masca’s portfolio — showcasing web development projects, creative designs, and full-stack expertise."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/preview.png" />
+    <meta property="og:image" content="https://diopetmasca.netlify.app/assets/preview.png" />
     <meta property="og:url" content="https://diopetmasca.netlify.app/" />
+    <meta property="og:site_name" content="Diopet Masca Portfolio" />
 
-    <!-- Twitter Preview -->
+    <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Diopet Masca - Portfolio" />
-    <meta name="twitter:description" content="Showcasing full-stack development work and project experience." />
-    <meta name="twitter:image" content="/assets/preview.png" />
+    <meta name="twitter:title" content="Diopet Masca - Full Stack Developer Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Showcasing modern full-stack development projects, UI design, and technical expertise."
+    />
+    <meta name="twitter:image" content="https://diopetmasca.netlify.app/assets/preview.png" />
+    <meta name="twitter:creator" content="@yourTwitterHandle" />
+
+    <!-- ✅ Portfolio JSON-LD Structured Data (for Google Rich Results) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Diopet Masca",
+        "url": "https://diopetmasca.netlify.app/",
+        "image": "https://diopetmasca.netlify.app/assets/preview.png",
+        "sameAs": [
+          "https://github.com/yourusername",
+          "https://www.linkedin.com/in/your-linkedin/",
+          "https://twitter.com/yourTwitterHandle"
+        ],
+        "jobTitle": "Full Stack Developer",
+        "description": "Portfolio of Diopet Masca — showcasing modern web development, UI/UX design, and full-stack engineering projects."
+      }
+    </script>
+
+    <!-- ✅ Optional: Preload your main assets for performance -->
+    <link rel="preload" href="/src/main.tsx" as="script" type="module" />
 
   </head>
 
   <body>
     <div id="root"></div>
+
+    <!-- ✅ Fallback link for accessibility and crawlers -->
+    <noscript>
+      <p>
+        Visit my portfolio here:
+        <a href="https://diopetmasca.netlify.app/">https://diopetmasca.netlify.app/</a>
+      </p>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
