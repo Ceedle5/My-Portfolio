@@ -24,11 +24,13 @@
       content="Explore Diopet Masca’s portfolio — showcasing web development projects, creative designs, and full-stack expertise."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://diopetmasca.netlify.app/assets/preview.jpg" />
     <meta property="og:url" content="https://diopetmasca.netlify.app/" />
     <meta property="og:site_name" content="Diopet Masca Portfolio" />
+    <meta property="og:image" content="https://diopetmasca.netlify.app/assets/preview.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Preview of Diopet Masca's web development portfolio" />
 
-    <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Diopet Masca - Full Stack Developer Portfolio" />
     <meta
@@ -36,8 +38,8 @@
       content="Showcasing modern full-stack development projects, UI design, and technical expertise."
     />
     <meta name="twitter:image" content="https://diopetmasca.netlify.app/assets/preview.jpg" />
+    <meta name="twitter:image:alt" content="Preview of Diopet Masca's portfolio website" />
 
-    <!-- ✅ Schema.org Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -61,10 +63,18 @@
     <div id="root"></div>
 
     <noscript>
-      <p>
-        Visit my portfolio here:
-        <a href="https://diopetmasca.netlify.app/">https://diopetmasca.netlify.app/</a>
-      </p>
+      <div style="text-align:center; padding:2rem;">
+        <h1>Welcome to Diopet Masca’s Portfolio</h1>
+        <p>
+          Explore my projects and experience in full-stack development:
+          <a href="https://diopetmasca.netlify.app/">Visit my portfolio</a>
+        </p>
+        <img
+          src="https://diopetmasca.netlify.app/assets/preview.jpg"
+          alt="Preview of Diopet Masca's portfolio website"
+          style="max-width: 100%; border-radius: 8px; margin-top: 1rem;"
+        />
+      </div>
     </noscript>
 
     <script type="module" src="/src/main.tsx"></script>
