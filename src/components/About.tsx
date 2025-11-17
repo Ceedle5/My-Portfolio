@@ -11,10 +11,10 @@ const About = () => {
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
       {/* Animated glow effects matching Hero section */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-primary/20 rounded-full blur-3xl top-0 right-0 animate-glow" />
         <div className="absolute w-80 h-80 bg-accent/20 rounded-full blur-3xl bottom-0 left-0 animate-glow" />
-      </div>
+      </div> */}
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="glass-card p-8 md:p-12 rounded-3xl shadow-elegant border border-border/50 relative overflow-hidden animate-fade-in-up">

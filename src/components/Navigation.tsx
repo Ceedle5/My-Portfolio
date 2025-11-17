@@ -22,6 +22,8 @@ const Navigation = () => {
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
+    { label: "Testimonial", href: "#testimonial" },
+
   ];
 
   const scrollToSection = (href: string) => {

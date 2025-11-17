@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import type { EmblaCarouselType } from "embla-carousel";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -10,6 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+
 import ecommerceImg from "@/assets/project-ecommerce.jpg";
 import taskManagerImg from "@/assets/project-taskmanager.jpg";
 import aiContentImg from "@/assets/project-aicontent.jpg";
@@ -17,8 +20,12 @@ import weatherImg from "@/assets/project-weather.jpg";
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [api, setApi] = useState();
-  const autoplayRef = useRef(null);
+
+  // FIXED TYPE
+  const [api, setApi] = useState<EmblaCarouselType | null>(null);
+
+  // FIXED TYPE
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const projects = [
     {
@@ -55,42 +62,44 @@ const Projects = () => {
     },
   ];
 
-  // Sync the carousel API with currentIndex state
+  // Update currentIndex whenever carousel changes
   useEffect(() => {
     if (!api) return;
-    
-    api.on("select", () => {
+
+    const handler = () => {
       setCurrentIndex(api.selectedScrollSnap());
-    });
+    };
+
+    api.on("select", handler);
+
+    return () => {
+      api.off("select", handler);
+    };
   }, [api]);
 
-  // Custom autoplay implementation
+  // Autoplay carousel
   useEffect(() => {
     if (!api) return;
 
-    const startAutoplay = () => {
+    const start = () => {
       autoplayRef.current = setInterval(() => {
         api.scrollNext();
       }, 5000);
     };
 
-    const stopAutoplay = () => {
+    const stop = () => {
       if (autoplayRef.current) {
         clearInterval(autoplayRef.current);
         autoplayRef.current = null;
       }
     };
 
-    startAutoplay();
-
-    return () => stopAutoplay();
+    start();
+    return () => stop();
   }, [api]);
 
-  // Handle dot click to navigate
-  const handleDotClick = (index) => {
-    if (api) {
-      api.scrollTo(index);
-    }
+  const handleDotClick = (index: number) => {
+    if (api) api.scrollTo(index);
   };
 
   return (
@@ -111,15 +120,11 @@ const Projects = () => {
           }}
           className="mx-auto w-full"
           onMouseEnter={() => {
-            if (autoplayRef.current) {
-              clearInterval(autoplayRef.current);
-            }
+            if (autoplayRef.current) clearInterval(autoplayRef.current);
           }}
           onMouseLeave={() => {
             if (api) {
-              autoplayRef.current = setInterval(() => {
-                api.scrollNext();
-              }, 5000);
+              autoplayRef.current = setInterval(() => api.scrollNext(), 5000);
             }
           }}
         >
@@ -127,11 +132,14 @@ const Projects = () => {
             {projects.map((project, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2">
                 <div className="h-full">
-                  <Card className="glass-card border-border/50 hover:shadow-elegant transition-all duration-300 overflow-hidden h-full group hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                  <Card
+                    className="glass-card border-border/50 hover:shadow-elegant transition-all duration-300 overflow-hidden h-full group hover:-translate-y-2 animate-fade-in-up"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
                     <Dialog>
                       <div className="relative overflow-hidden">
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.title}
                           className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                         />
@@ -142,14 +150,14 @@ const Projects = () => {
                         </DialogTrigger>
                       </div>
                       <DialogContent className="max-w-4xl w-[95vw] p-2">
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.title}
                           className="w-full h-auto rounded-lg"
                         />
                       </DialogContent>
                     </Dialog>
-                    
+
                     <CardHeader>
                       <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
                         {project.title}
@@ -158,7 +166,7 @@ const Projects = () => {
                         {project.description}
                       </CardDescription>
                     </CardHeader>
-                    
+
                     <CardContent className="space-y-4">
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech) => (
@@ -171,8 +179,8 @@ const Projects = () => {
                         ))}
                       </div>
                       <div className="flex gap-3 pt-2">
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           className="flex-1 gradient-primary hover:shadow-lg transition-all"
                           asChild
                         >
@@ -181,8 +189,8 @@ const Projects = () => {
                             Live Demo
                           </a>
                         </Button>
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           variant="outline"
                           className="flex-1 border-2 border-primary hover:border-blue-400 hover:shadow-lg transition-all"
                           asChild
@@ -199,9 +207,8 @@ const Projects = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          
-       
-          {/* Dot Indicators */}
+
+          {/* Dots */}
           <div className="flex justify-center gap-2 mt-8">
             {projects.map((_, index) => (
               <button

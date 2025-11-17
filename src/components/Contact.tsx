@@ -33,7 +33,7 @@ const Contact = () => {
                 <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span>your.email@example.com</span>
+                <span>ptc.diopetmascarina@gmail.com</span>
               </a>
               
               <div className="flex gap-4 pt-4">
