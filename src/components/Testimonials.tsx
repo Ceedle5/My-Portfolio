@@ -31,7 +31,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 gradient-text glow-text">
             Client <span className="text-gradient">Testimonials</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">

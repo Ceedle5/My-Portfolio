@@ -1,24 +1,20 @@
 import profilePhoto from "@/assets/profile.jpg";
 
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
-import { MdDesignServices } from "react-icons/md";
-
 const About = () => {
-  
-const skills = [
-  { name: "React", icon: <FaReact className="text-blue-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
-  { name: "UI/UX", icon: <MdDesignServices className="text-pink-500" /> },
-];
+  const skills = [
+    { name: "React", icon: "⚛️" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "TypeScript", icon: "📘" },
+    { name: "UI/UX", icon: "🎨" },
+  ];
+
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
       {/* Animated glow effects matching Hero section */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-primary/20 rounded-full blur-3xl top-0 right-0 animate-glow" />
         <div className="absolute w-80 h-80 bg-accent/20 rounded-full blur-3xl bottom-0 left-0 animate-glow" />
-      </div>
+      </div> */}
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="glass-card p-8 md:p-12 rounded-3xl shadow-elegant border border-border/50 relative overflow-hidden animate-fade-in-up">
@@ -43,14 +39,14 @@ const skills = [
               
               <p className="text-lg text-muted-foreground mb-4">
                 Hello, my name is <span className="font-semibold text-foreground">Diopet C. Mascariña</span>. 
-                I am a professional <span className="font-semibold gradient-text"> IT FullStack Software Developer & Creative Problem Solver</span>.
+                I am a professional <span className="font-semibold gradient-text">Full Stack Developer & Creative Problem Solver</span>.
               </p>
               
               <div className="space-y-2 text-muted-foreground/80 mb-6">
-                <p>• Full Stack</p>
-                <p>• Problem Solver</p>
-                <p>• Web and App </p>
-                <p>• Front-end and Backend</p>
+                <p>• UI/UX</p>
+                <p>• Product designer</p>
+                <p>• Web designer</p>
+                <p>• Front-end</p>
               </div>
 
               <div>
@@ -84,7 +80,7 @@ const skills = [
                   <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary rounded-full blur-2xl opacity-30 animate-glow"></div>
                   
                   {/* Main photo circle */}
-                  <div className="relative w-full h-full rounded-full w-200 h-200 overflow-hidden border-4 border-primary/30 shadow-elegant z-10 ring-4 ring-primary/10">
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 shadow-elegant z-10 ring-4 ring-primary/10">
                     <img 
                       src={profilePhoto} 
                       alt="Diopet C. Mascariña" 

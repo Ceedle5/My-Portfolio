@@ -31,6 +31,10 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto relative z-10 text-center animate-fade-in">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full -translate-y-20 translate-x-20"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-accent/10 to-transparent rounded-full translate-y-20 -translate-x-20"></div>
+          
         <div className="space-y-6 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
             Hi, I'm <span className="gradient-text glow-text">Diopet C. Mascariña</span>
@@ -39,7 +43,7 @@ const Hero = () => {
             Full Stack Software Developer/Programmer & Creative Problem Solver
           </p>
           <p className="text-lg md:text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            I craft elegant digital experiences through clean code and thoughtful design. 
+             Eager to learn new technologies, improve coding skills, and contribute to real-world projects. 
             Specialized in building modern web applications with cutting-edge technologies.
           </p>
           
