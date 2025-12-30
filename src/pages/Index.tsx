@@ -31,9 +31,9 @@ const Index = () => {
       </SectionWrapper>
 
 
-      <SectionWrapper>
+      {/* <SectionWrapper>
         <Testimonials />
-      </SectionWrapper>
+      </SectionWrapper> */}
 
       <SectionWrapper>
         <Projects />

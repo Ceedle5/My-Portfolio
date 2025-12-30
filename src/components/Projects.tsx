@@ -13,10 +13,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import ecommerceImg from "@/assets/project-ecommerce.jpg";
+import ecommerceImg from "@/assets/ecom.png";
 import taskManagerImg from "@/assets/project-taskmanager.jpg";
 import aiContentImg from "@/assets/project-aicontent.jpg";
 import weatherImg from "@/assets/project-weather.jpg";
+import ffeImg from "@/assets/ffe.png";
+import lambrettaImg from "@/assets/lamretta.png"
+import vendorAccreditationImg from "@/assets/vaFrom.png"
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,38 +31,45 @@ const Projects = () => {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const projects = [
+
+     {
+      title: "FFE Management System",
+      description: "A Furniture, Fixture, and Equipment (FFE) management system designed to track assets, monitor allocation and status, and manage inventory records across branches. Includes detailed item history, status workflows, and server-side data handling for large asset datasets.",
+      tech: ["CodeIgniter 4", "PHP", "JavaScript", "Bootstrap"],
+      demo: "#",
+      github: "#",
+      image: ffeImg,
+    },
+    
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Pastry Shop",
+      description: "A full-stack e-commerce solution with inventory management, payment integration, and admin dashboard.",
+      tech: ["Codeigniter 4", "PHP", "JavaScript", "CSS", "SQL", "XML"],
       demo: "#",
       github: "#",
       image: ecommerceImg,
     },
-    {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, team workspaces, and analytics dashboard.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "WebSockets"],
+    
+   
+
+      {
+      title: "Lambretta Motorcycle Website",
+      description: "A modern product showcase website for Lambretta motorcycles featuring model galleries, specifications, and brand highlights. Designed to present scooter models with clean visuals, responsive layouts, and intuitive navigation for customers.",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
       demo: "#",
       github: "#",
-      image: taskManagerImg,
+      image: lambrettaImg,
     },
-    {
-      title: "AI Content Generator",
-      description: "AI-powered content creation tool leveraging modern LLMs for generating marketing copy and social media posts.",
-      tech: ["React", "Python", "FastAPI", "OpenAI"],
-      demo: "#",
-      github: "#",
-      image: aiContentImg,
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with detailed forecasts, interactive maps, and location-based alerts.",
-      tech: ["Vue.js", "Tailwind", "Weather API"],
-      demo: "#",
-      github: "#",
-      image: weatherImg,
-    },
+
+        {
+        title: "Vendor Accreditation System",
+        description: "A web-based vendor accreditation system for registering, validating, and managing supplier information. Features structured forms, document uploads, status tracking, and approval workflows to ensure compliant and organized vendor onboarding.",
+        tech: ["CodeIgniter 4", "PHP", "JavaScript", "jQuery", "SQL Server"],
+        demo: "#",
+        github: "#",
+        image: vendorAccreditationImg,
+      },
+
   ];
 
   // Update currentIndex whenever carousel changes

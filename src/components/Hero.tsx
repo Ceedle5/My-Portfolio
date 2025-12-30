@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import resumePdf from "@/assets/resume.pdf";
+import resumePdf from "@/assets/programmer.pdf";
 
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 

@@ -53,26 +53,6 @@ const skills = [
                 <p>• Front-end and Backend</p>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span className="gradient-text">Skills</span>
-                  <div className="h-px flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="group relative"
-                    >
-                      <div className="absolute inset-0 bg-primary/20 rounded-xl blur-lg opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-                      <div className="relative flex items-center gap-2 px-4 py-2.5 glass-card rounded-xl border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-                        <span className="text-2xl">{skill.icon}</span>
-                        <span className="font-medium text-sm">{skill.name}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* Right side - Image with illustration */}
